@@ -1,0 +1,1 @@
+//Definierar User-modellen.
