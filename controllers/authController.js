@@ -1,1 +1,1 @@
-//Hanterar registrering och inloggning av användare.
+//*Hanterar registrering och inloggning av användare.

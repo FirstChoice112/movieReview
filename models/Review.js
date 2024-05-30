@@ -1,1 +1,1 @@
-// Definierar Review-modellen.
+//* Definierar Review-modellen.

@@ -1,1 +1,1 @@
-//  Funktioner för att validera indata.
+//*  Funktioner för att validera indata.
