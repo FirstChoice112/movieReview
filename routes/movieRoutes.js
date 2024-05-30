@@ -1,1 +1,1 @@
-//Innehåller routes för filmrelaterade endpoints.
+//* Innehåller routes för filmrelaterade endpoints.

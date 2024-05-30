@@ -1,1 +1,1 @@
-//Innehåller routes för registrering och inloggning.
+//* Innehåller routes för registrering och inloggning.
