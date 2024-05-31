@@ -16,6 +16,16 @@ const addMovie = async (req, res) => {
   }
 };
 
+const getAllMovies = async (req, res) => {
+  try {
+    const movies = await Movie.find();
+    res.status(200).json(movies);
+  } catch (err) {
+    res.status(500).json({ message: "Something went wrong 🤯" });
+  }
+};
+
 module.exports = {
   addMovie,
+  getAllMovies,
 };
