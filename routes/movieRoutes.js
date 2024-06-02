@@ -6,6 +6,7 @@ const {
   getAllMovies,
   getMovieById,
   updateMovie,
+  deleteMovie,
 } = require("../controllers/movieController");
 const authMiddleware = require("../middlewares/authMiddleware");
 
@@ -13,5 +14,6 @@ router.post("/", authMiddleware, addMovie);
 router.get("/", getAllMovies);
 router.get("/:id", getMovieById);
 router.patch("/:id", authMiddleware, updateMovie);
+router.delete("/:id", authMiddleware, deleteMovie);
 
 module.exports = router;
