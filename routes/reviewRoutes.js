@@ -1,8 +1,9 @@
 //* Innehåller routes för recensioner.
 const express = require("express");
 const router = express.Router();
-const { addReview } = require("../controllers/reviewController");
+const { addReview, getAllReviews } = require("../controllers/reviewController");
 
 router.post("/", addReview);
+router.get("/", getAllReviews);
 
 module.exports = router;
