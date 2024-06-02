@@ -75,10 +75,26 @@ const deleteReview = async (req, res) => {
   }
 };
 
+//* Get review by Movie Id.
+const getReviewByMovieId = async (req, res) => {
+  try {
+    const review = await Review.find({ movieId: req.params.id });
+    if (!review) {
+      return res
+        .status(404)
+        .json({ message: "No Review found for this movie 🤷‍♂️" });
+    }
+    res.status(200).json(review);
+  } catch (err) {
+    res.status(500).json({ message: "Something went wrong 🤯" });
+  }
+};
+
 module.exports = {
   addReview,
   getAllReviews,
   getReviewById,
   updateReview,
   deleteReview,
+  getReviewByMovieId,
 };
