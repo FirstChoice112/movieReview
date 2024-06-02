@@ -39,8 +39,26 @@ const getMovieById = async (req, res) => {
   }
 };
 
+//* Update a movie.
+const updateMovie = async (req, res) => {
+  try {
+    const updatedMovie = await Movie.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+    if (!updatedMovie) {
+      return res.status(404).json({ message: "Movie not found 🤷‍♂️" });
+    }
+    res.status(200).json(updatedMovie);
+  } catch (err) {
+    res.status(500).json({ message: "Something went wrong 🤯" });
+  }
+};
+
 module.exports = {
   addMovie,
   getAllMovies,
   getMovieById,
+  updateMovie,
 };
