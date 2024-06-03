@@ -2,6 +2,7 @@
 
 //* Add a movie.
 const Movie = require("../models/Movie");
+const { getMovieWithRatings } = require("../models/movieAggregation");
 
 const addMovie = async (req, res) => {
   try {
@@ -69,10 +70,24 @@ const deleteMovie = async (req, res) => {
   }
 };
 
+//* Get movie with average ratings
+const getAllMoviesWithRatings = async (req, res) => {
+  try {
+    const movie = await getMovieWithRatings();
+    if (!movie) {
+      return res.status(404).json({ message: "Movie not found 🤷‍♂️" });
+    }
+    res.status(200).json(movie);
+  } catch (err) {
+    res.status(500).json({ message: "Something went wrong 🤯" });
+  }
+};
+
 module.exports = {
   addMovie,
   getAllMovies,
   getMovieById,
   updateMovie,
   deleteMovie,
+  getAllMoviesWithRatings,
 };
