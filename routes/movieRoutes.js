@@ -11,13 +11,14 @@ const {
 } = require("../controllers/movieController");
 const { getReviewByMovieId } = require("../controllers/reviewController");
 const authMiddleware = require("../middlewares/authMiddleware");
+const adminMiddleware = require("../middlewares/adminMiddleware");
 
-router.post("/", authMiddleware, addMovie);
+router.post("/", authMiddleware, adminMiddleware, addMovie);
 router.get("/", getAllMovies);
 router.get("/ratings", getAllMoviesWithRatings);
 router.get("/:id", getMovieById);
-router.patch("/:id", authMiddleware, updateMovie);
-router.delete("/:id", authMiddleware, deleteMovie);
+router.patch("/:id", authMiddleware, adminMiddleware, updateMovie);
+router.delete("/:id", authMiddleware, adminMiddleware, deleteMovie);
 router.get("/:id/reviews", getReviewByMovieId);
 
 module.exports = router;

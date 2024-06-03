@@ -16,8 +16,14 @@ async function registerUser(req, res) {
       username: req.body.username,
       email: req.body.email,
       password: await bcrypt.hash(req.body.password, 10),
+      isAdmin: req.body.isAdmin || false,
     });
     await newuser.save();
+
+    const payload = {
+      userId: newuser._id,
+    };
+
     res.status(201).json({ message: "User created 😀" });
   } catch (error) {
     res.status(500).json({ message: "Something went wrong 😶‍🌫️" });
