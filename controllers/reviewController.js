@@ -1,4 +1,4 @@
-//*Hanterar CRUD-operationer för recensioner.
+//* Handles CRUD operations for reviews.
 const Review = require("../models/Review");
 
 //* Add Review

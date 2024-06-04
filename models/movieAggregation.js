@@ -1,6 +1,6 @@
 const Movie = require("../models/Movie");
 const Review = require("../models/Review");
-//* Get movie with average ratings
+//* Get movie with average ratings, with Aggregation.
 const getMovieWithRatings = async () => {
   try {
     const movies = await Movie.aggregate([

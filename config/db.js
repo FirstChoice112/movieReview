@@ -1,5 +1,4 @@
 //* Innehåller konfigurationen för att ansluta till MongoDB-databasen med Mongoose.
-
 const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
 

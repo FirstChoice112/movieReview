@@ -1,4 +1,4 @@
-//* Define Movie-modell.
+//* Defines the Movie-modell.
 const mongoose = require("mongoose");
 
 const movieSchema = new mongoose.Schema({

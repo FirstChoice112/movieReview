@@ -1,4 +1,4 @@
-//* Define Review-modell.
+//* Defines the Review-modell.
 const mongoose = require("mongoose");
 
 const reviewSchema = new mongoose.Schema({

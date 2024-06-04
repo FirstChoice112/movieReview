@@ -1,6 +1,4 @@
-//*Hanterar registrering och inloggning av användare.
-
-// authController.js
+//* Handling registration and login.
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");

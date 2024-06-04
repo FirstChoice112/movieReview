@@ -1,4 +1,4 @@
-//* Middleware för att hantera autentisering och auktorisering.
+//* Middleware for checking if user is logged in with a token
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 
